@@ -56,11 +56,16 @@ const default_api: { [key: string]: any } = {
     Promise
 }
 
+
+
+
 export function run(code: string, append_api: { [key: string]: any } = {}) {
+    debugger
     const scope = new Scope('block')
     scope.$const('this', this)
 
     for (const name of Object.getOwnPropertyNames(default_api)) {
+        console.log(name)
         scope.$const(name, default_api[name])
     }
 
